@@ -1,0 +1,53 @@
+/-----------------------------------------------------------
+Using Protobuf instead of JSON to communicate with a frontend
+-----------------------------------------------------------/
+
+Protocol buffers are widely used to commnicate between services.
+
+Protobuf is a binary serialization format from Google meant to serialize strctured data. 
+
+------------------------------------
+Advantages of JSON:-
+------------------------------------
+smaller in size;
+typed;
+
+------------------------------------
+Example:-
+------------------------------------
+message Contact {
+  required string first_name = 1;
+  required string last_name = 2;
+  optional Address address = 3;
+  repeated Phone phone_numbers = 4;
+};
+
+------------------------------------
+creating an instace looks like a class
+------------------------------------
+
+var contact = new Contact({
+  first_name: _contact['firstName'],
+  last_name: _contact['lastName'],
+});
+
+------------------------------------
+requesting module:-
+------------------------------------
+var req = {
+  method: 'POST',
+  url: '/api/contacts',
+  responseType: 'arraybuffer',
+  transformRequest: function(r) { return r;},
+  data: contact.toArrayBuffer(),
+  headers: {
+    'Content-Type': 'binary/octet-stream'
+  }
+};
+
+
+------------------------------------
+Resource
+------------------------------------
+https://blog.wearewizards.io/using-protobuf-instead-of-json-to-communicate-with-a-frontend
+
