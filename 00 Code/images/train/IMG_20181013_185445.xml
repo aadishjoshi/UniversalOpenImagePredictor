@@ -1,0 +1,26 @@
+<annotation>
+	<folder>image</folder>
+	<filename>IMG_20181013_185445.jpg</filename>
+	<path>C:\Users\aadis\Documents\Anaconda WorkSpace\TensorFlow\Custom_Object_Detection\image\IMG_20181013_185445.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>400</width>
+		<height>533</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ashish</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>242</xmin>
+			<ymin>44</ymin>
+			<xmax>358</xmax>
+			<ymax>180</ymax>
+		</bndbox>
+	</object>
+</annotation>

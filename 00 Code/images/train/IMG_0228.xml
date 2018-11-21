@@ -1,0 +1,26 @@
+<annotation>
+	<folder>image</folder>
+	<filename>IMG_0228.JPG</filename>
+	<path>C:\Users\aadis\Documents\Anaconda WorkSpace\TensorFlow\Custom_Object_Detection\image\IMG_0228.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>himali</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>978</xmin>
+			<ymin>797</ymin>
+			<xmax>1684</xmax>
+			<ymax>1704</ymax>
+		</bndbox>
+	</object>
+</annotation>

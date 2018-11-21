@@ -1,0 +1,38 @@
+<annotation>
+	<folder>image</folder>
+	<filename>IMG_20181006_210423_HDR.jpg</filename>
+	<path>C:\Users\aadis\Documents\Anaconda WorkSpace\TensorFlow\Custom_Object_Detection\image\IMG_20181006_210423_HDR.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4000</width>
+		<height>3000</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pandit</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>720</xmin>
+			<ymin>517</ymin>
+			<xmax>1184</xmax>
+			<ymax>1063</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>ashish</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1871</xmin>
+			<ymin>199</ymin>
+			<xmax>2329</xmax>
+			<ymax>799</ymax>
+		</bndbox>
+	</object>
+</annotation>
