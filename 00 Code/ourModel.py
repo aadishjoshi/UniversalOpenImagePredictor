@@ -1,0 +1,70 @@
+from DataPreprocess import *
+
+def myModule():
+    X_train = [np.array(load_img('E:/Datasets/validation/{}.jpg'.format(i),target_size=(100,100), grayscale=True))/255 for i in tqdm(Imageid[10000:11000])]
+    X_Val = [np.array(load_img('E:/Datasets/validation/{}.jpg'.format(i),target_size=(100,100), grayscale=True))/255 for i in tqdm(Imageid[:200])]
+
+    
+    nn = Sequential()
+    nn.add(BatchNormalization(input_shape=(100, 100, 1)))
+    nn.add(Conv2D(4, kernel_size=(2,2), strides=(1,1)))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Conv2D(8, kernel_size=(2,2), strides=(1,1)))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Conv2D(16, kernel_size=(2,2), strides=(2,2)))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Conv2D(32, kernel_size=(2,2), strides=(1,1)))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Conv2D(32, kernel_size=(2,2), strides=(2,2)))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Conv2D(32, kernel_size=(2,2), strides=(2,2)))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Flatten())
+    nn.add(Dense(2048))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Dense(1024))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Dense(512))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Dense(128))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Dense(50))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Dense(25))
+    nn.add(PReLU())
+    nn.add(BatchNormalization())
+    nn.add(Dropout(0.25))
+    nn.add(Dense(20, activation='softmax'))
+
+    nn.compile(loss=keras.losses.categorical_crossentropy, metrics=['accuracy'], optimizer='adam')
+    X_train = np.array(X_train).reshape((1000,100,100,1))
+    X_Val = np.array(X_Val).reshape((200,100,100,1))
+    nn.fit(X_train, Y_train, validation_data=(X_Val,Y_Val), batch_size=100, epochs=5, verbose=2)
+    return nn
+
+# export code
+if __name__ == "__main__":
+    ourModel20 = myModule()
+
